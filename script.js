@@ -19,28 +19,33 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 function changeColor() {
 
 //remove any old classes from element
-$("time-block").removeClass(".present .past .future");    
+$(".time-block").removeClass(".present .past .future");    
     // get current time
     let currentTime = moment().format("HH");
     console.log(currentTime)
 
-//     // apply new class based on if the description row is past, present, or future
+    // apply new class based on if the description row is past, present, or future
     let hour = $(this).attr('id');
+    console.log(this)
     // make hour string into integer to compare with currentTime
     hour = parseInt(hour, 10);
 
+     
+
     $('.time-block').each(function() {
     if (currentTime > hour) {
-        $("time-block").addClass('past');
-    };
+        $(".time-block").addClass('past');
+    }
     if (currentTime === hour) {
-        $("time-block").addClass('present');
-    };
+        $(".time-block").addClass('present');
+    }
     if (currentTime < hour) {
-        $("time-block").addClass('future');
+        $(".time-block").addClass('future');
     }
 });
 }
+
+
 
 
 
