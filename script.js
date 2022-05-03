@@ -25,12 +25,12 @@ $(".time-block").removeClass(".present .past .future");
     console.log(currentTime)
 
     // apply new class based on if the description row is past, present, or future
-    let hour = $(this).attr('id');
+    let hour = $(this).attr('data-time');
     console.log(this)
     // make hour string into integer to compare with currentTime
     hour = parseInt(hour, 10);
 
-     
+    //  make variables for every section
 
     $('.time-block').each(function() {
     if (currentTime > hour) {
