@@ -21,18 +21,20 @@ function changeColor() {
 //remove any old classes from element
 $("description").removeClass(".present .past .future");    
     // get current time
-    let currentTime = moment().hour();
+    let currentTime = moment().format("HH");
     console.log(currentTime)
 
 //     // apply new class based on if the description row is past, present, or future
-    
+    let hour = $(this).attr('id');
+    // make hour string into integer to compare with currentTime
+    hour = parseInt(hour, 10);
     if (currentTime > hour) {
         $("description").addClass('past');
     };
-    if (currentHour === hour) {
+    if (currentTime === hour) {
         $("description").addClass('present');
     };
-    if (currentHour < hour) {
+    if (currentTime < hour) {
         $("description").addClass('future');
     }
 };
