@@ -17,15 +17,15 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 
 // // function to use current time to dictate color of boxes 
 function changeColor() {
+
+//remove any old classes from element
+$("description").removeClass(".present .past .future");    
     // get current time
     let currentTime = moment().hour();
     console.log(currentTime)
-}
-
-//     //remove any old classes from element
-    $("description").removeClass(".present .past .future");
 
 //     // apply new class based on if the description row is past, present, or future
+    
     if (currentTime > hour) {
         $("description").addClass('past');
     };
@@ -35,6 +35,9 @@ function changeColor() {
     if (currentHour < hour) {
         $("description").addClass('future');
     }
+};
+
+
 
 
 
