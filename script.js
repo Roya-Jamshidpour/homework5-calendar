@@ -4,7 +4,7 @@ init()
 
 function init() {
     changeColor()
-
+    
 }
 
 // Current date displayed at top of page
@@ -18,60 +18,37 @@ $('.saveBtn').on('click', saveTask);
 
 // saves task to local storage
 function saveTask() {
-    // get the text
-    let text = $(this).siblings('.description').val();
+    // get the text typed inside row
     let time = $(this).parent().attr('data-time');
+    let text = $(this).prev().val();
+    
     // set item in local storage
     localStorage.setItem(time, text);
     console.log(text);
     displayTask(time, text)
-    
+
 }
 
 // function to display task in field upon refresh
 function displayTask() {
     $("#saveBtn").show().delay(300).fadeOut();
-
-    // let displayedTask = localStorage.getItem(time, text);
-    
-    // console.log(displayedTask)
-        
-}   
-    
-    
-        
-        
-    
-    
-   
-    // console.log(displayedTask)
-    // localStorage.getItem('.time-block').siblings('.description').val();
-    
-
-
-
+}
 
 // // function to use current time to dictate color of boxes 
 function changeColor() {
 
     //remove any old classes from element
-    $(".time-block").removeClass(".present .past .future");
+    // $(".time-block").removeClass(".present .past .future");
     // get current time
     let currentTime = moment().format("HH");
     console.log(currentTime)
 
-    
-
-
-    //  make variables for every section!!!
-
-// apply new class based on if the description row is past, present, or future
+    // apply new class based on if the description row is past, present, or future
     $('.time-block').each(function () {
         let hour = $(this).attr('data-time');
-        console.log(this)
         // make hour string into integer to compare with currentTime
         hour = parseInt(hour, 10);
-        
+        // applies color classes based on hour of day
         if (currentTime > hour) {
             $(this).addClass('past');
         };
@@ -83,19 +60,3 @@ function changeColor() {
         }
     })
 };
-
-
-
-
-
-
-
-
-// // when a save button is pressed it saves task to local storage
-// $('.saveBtn').on('click', saveTask);
-
-// need function saveTask to save tasks when button is pressed 
-// need function to get getItem tasks upon opening app
-
-
-
