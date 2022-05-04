@@ -24,15 +24,17 @@ function saveTask() {
     // set item in local storage
     localStorage.setItem(time, text);
     console.log(text);
-    displayTask()
+    displayTask(time, text)
     
 }
 
 // function to display task in field upon refresh
-function displayTask(time, text) {
-    let displayedTask = localStorage.getItem(time, text);
+function displayTask() {
+    $("#saveBtn").show().delay(300).fadeOut();
+
+    // let displayedTask = localStorage.getItem(time, text);
     
-    console.log(displayedTask)
+    // console.log(displayedTask)
         
 }   
     
@@ -58,28 +60,29 @@ function changeColor() {
     let currentTime = moment().format("HH");
     console.log(currentTime)
 
-    // apply new class based on if the description row is past, present, or future
-    let hour = $(this).attr('data-time');
-    console.log(this)
-    hour = parseInt(hour, 10);
-    console.log(hour)
-    // make hour string into integer to compare with currentTime
+    
 
 
-    //  make variables for every section
+    //  make variables for every section!!!
 
+// apply new class based on if the description row is past, present, or future
     $('.time-block').each(function () {
+        let hour = $(this).attr('data-time');
+        console.log(this)
+        // make hour string into integer to compare with currentTime
+        hour = parseInt(hour, 10);
+        
         if (currentTime > hour) {
-            $(".time-block").addClass('past');
-        }
+            $(this).addClass('past');
+        };
         if (currentTime === hour) {
-            $(".time-block").addClass('present');
-        }
+            $(this).addClass('present');
+        };
         if (currentTime < hour) {
-            $(".time-block").addClass('future');
+            $(this).addClass('future');
         }
-    });
-}
+    })
+};
 
 
 
