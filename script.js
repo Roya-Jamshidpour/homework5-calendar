@@ -20,17 +20,21 @@ $('.saveBtn').on('click', saveTask);
 function saveTask() {
     // get the text
     let text = $(this).siblings('.description').val();
+    let time = $(this).parent().attr('data-time');
     // set item in local storage
-    localStorage.setItem('.time-block', text);
+    localStorage.setItem(time, text);
     console.log(text)
-    displayTask()
+    // displayTask()
 }
 
 // function to display task in field upon refresh
-function displayTask() {
-    localStorage.getItem('.time-block').siblings('.description').val();
+function displayTask(text) {
+    console.log(text)
+    let newText = $('.time-block', text);
+    // let displayedTask = $(this).val();
+    console.log(this)
+    // localStorage.getItem('.time-block').siblings('.description').val();
     
-    console.log(task)
 }
 
 
