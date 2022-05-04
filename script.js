@@ -18,27 +18,25 @@ $('.saveBtn').on('click', saveTask);
 
 // saves task to local storage
 function saveTask() {
-    // get the text typed inside row
-    let time = $(this).parent().attr('data-time');
-    let text = $(this).prev().val();
-    
-    // set item in local storage
-    localStorage.setItem(time, text);
-    console.log(text);
-    displayTask(time, text)
+// get the text typed inside row
+let time = $(this).parent().attr('data-time');
+let text = $(this).prev().val();
+
+// set item in local storage
+localStorage.setItem(time, text);
+console.log(text);
+displayTask(time, text)
 
 }
 
 // function to display task in field upon refresh
 function displayTask() {
-    $("#saveBtn").show().delay(300).fadeOut();
+$('.time-block').show().delay(300).fadeOut();
 }
 
 // // function to use current time to dictate color of boxes 
 function changeColor() {
 
-    //remove any old classes from element
-    // $(".time-block").removeClass(".present .past .future");
     // get current time
     let currentTime = moment().format("HH");
     console.log(currentTime)
@@ -58,5 +56,5 @@ function changeColor() {
         if (currentTime < hour) {
             $(this).addClass('future');
         }
-    })
-};
+    });
+}
