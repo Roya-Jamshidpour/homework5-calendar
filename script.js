@@ -23,19 +23,29 @@ function saveTask() {
     let time = $(this).parent().attr('data-time');
     // set item in local storage
     localStorage.setItem(time, text);
-    console.log(text)
-    // displayTask()
+    console.log(text);
+    displayTask()
+    
 }
 
 // function to display task in field upon refresh
-function displayTask(text) {
-    console.log(text)
-    let newText = $('.time-block', text);
-    // let displayedTask = $(this).val();
-    console.log(this)
+function displayTask(time, text) {
+    let displayedTask = localStorage.getItem(time, text);
+    
+    console.log(displayedTask)
+        
+}   
+    
+    
+        
+        
+    
+    
+   
+    // console.log(displayedTask)
     // localStorage.getItem('.time-block').siblings('.description').val();
     
-}
+
 
 
 
