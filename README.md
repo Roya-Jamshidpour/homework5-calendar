@@ -1,4 +1,4 @@
-# homework5-calendar
+# homework5-scheduler
 <img src="https://res.cloudinary.com/dcm18vy74/image/upload/v1651702182/homework5-calendar/Screen_Shot_2022-05-04_at_3.09.04_PM_icxdhk.png">
 
 ## Description
