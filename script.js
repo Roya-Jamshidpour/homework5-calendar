@@ -1,50 +1,70 @@
-// function initiated upon opening page. Gets saved tasks and makes hour rows change color based on time
- init ()
 
- function init() {
-     changeColor()
-    
- }
+// function initiated upon opening page. Gets saved tasks and makes hour rows change color based on time
+init()
+
+function init() {
+    changeColor()
+
+}
 
 // Current date displayed at top of page
 var today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
 
 // // when a save button is pressed it saves task to local storage
-// $('.saveBtn').on('click', saveTask);
+let saveButton = $(".saveBtn");
+$('.saveBtn').on('click', saveTask);
+
+
+// saves task to local storage
+function saveTask() {
+    // get the text
+    let text = $(this).siblings('.description').val();
+    // set item in local storage
+    localStorage.setItem('.time-block', text);
+    console.log(text)
+    displayTask()
+}
+
+// function to display task in field upon refresh
+function displayTask() {
+    localStorage.getItem('.time-block').siblings('.description').val();
+    
+    console.log(task)
+}
 
 
 
 // // function to use current time to dictate color of boxes 
 function changeColor() {
 
-//remove any old classes from element
-$(".time-block").removeClass(".present .past .future");    
+    //remove any old classes from element
+    $(".time-block").removeClass(".present .past .future");
     // get current time
     let currentTime = moment().format("HH");
     console.log(currentTime)
 
     // apply new class based on if the description row is past, present, or future
     let hour = $(this).attr('data-time');
-     console.log(this)
+    console.log(this)
     hour = parseInt(hour, 10);
-   console.log(hour)
+    console.log(hour)
     // make hour string into integer to compare with currentTime
-    
+
 
     //  make variables for every section
 
-    $('.time-block').each(function() {
-    if (currentTime > hour) {
-        $(".time-block").addClass('past');
-    }
-    if (currentTime === hour) {
-        $(".time-block").addClass('present');
-    }
-    if (currentTime < hour) {
-        $(".time-block").addClass('future');
-    }
-});
+    $('.time-block').each(function () {
+        if (currentTime > hour) {
+            $(".time-block").addClass('past');
+        }
+        if (currentTime === hour) {
+            $(".time-block").addClass('present');
+        }
+        if (currentTime < hour) {
+            $(".time-block").addClass('future');
+        }
+    });
 }
 
 
