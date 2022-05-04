@@ -7,6 +7,7 @@ function init() {
     
 }
 
+
 // Current date displayed at top of page
 var today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
@@ -29,16 +30,11 @@ displayTask(time, text)
 
 }
 
-// function to display task in field upon refresh
-function displayTask() {
-$('.time-block').show().delay(300).fadeOut();
-}
-
 // // function to use current time to dictate color of boxes 
 function changeColor() {
 
     // get current time
-    let currentTime = moment().format("HH");
+    let currentTime = moment().hours();
     console.log(currentTime)
 
     // apply new class based on if the description row is past, present, or future
@@ -49,12 +45,28 @@ function changeColor() {
         // applies color classes based on hour of day
         if (currentTime > hour) {
             $(this).addClass('past');
-        };
-        if (currentTime === hour) {
+        
+        } else if (currentTime === hour) {
             $(this).addClass('present');
-        };
-        if (currentTime < hour) {
+    
+    } else {
             $(this).addClass('future');
         }
     });
 }
+
+// every row to display saved text content in
+$('#five .description').val(localStorage.getItem('05'))
+$('#six .description').val(localStorage.getItem('06'));
+$('#seven .description').val(localStorage.getItem('07'));
+$('#eight .description').val(localStorage.getItem('08'));
+$('#nine .description').val(localStorage.getItem('09'));
+$('#ten .description').val(localStorage.getItem('10'));
+$('#eleven .description').val(localStorage.getItem('11'));
+$('#twelve .description').val(localStorage.getItem('12'));
+$('#thirteen .description').val(localStorage.getItem('13'));
+$('#fourteen .description').val(localStorage.getItem('14'));
+$('#fifteen .description').val(localStorage.getItem('15'));
+$('#sixteen .description').val(localStorage.getItem('16'));
+$('#seventeen .description').val(localStorage.getItem('17'));
+$('#eighteen .description').val(localStorage.getItem('18'));
