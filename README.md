@@ -1,4 +1,4 @@
-# homework5-scheduler
+# scheduler
 <img src="https://res.cloudinary.com/dcm18vy74/image/upload/v1651702182/homework5-calendar/Screen_Shot_2022-05-04_at_3.09.04_PM_icxdhk.png">
 
 ## Description
@@ -6,4 +6,4 @@ This is a daily scheduler app! The current date is displayed at the top of the p
 
 
 ### Here is a link to the daily scheduler app!
-<a href=" https://roya-jamshidpour.github.io/homework5-scheduler/"> https://roya-jamshidpour.github.io/homework5-scheduler/
+<a href="https://roya-jamshidpour.github.io/scheduler/">https://roya-jamshidpour.github.io/scheduler/
