@@ -8,7 +8,7 @@ Roya Jamshidpour - roya.jamshidpour@gmail.com
 This is a daily scheduler app! The current date is displayed at the top of the page and with each changing hour the rows to input your daily tasks/plans change colors. Past hours display pink, the current hour displays green, and future hours display a warm yellow hue. Type your daily tasks into each row and, if you click the corresponding save button, the app will continue to display that task even if you refresh the page!
 
 ## Technologies used
-Vanilla JavaScript, JQuery, Bootstrap CSS, CSS, HTML 
+Moment.JS, Vanilla JavaScript, JQuery, Bootstrap CSS, CSS, HTML 
 
 
 ### Here is a link to the daily scheduler app!
